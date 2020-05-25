@@ -1,7 +1,7 @@
 # purpose is to make sure all our files can communicate
 
 
-# requrire all gems that we will use
+# requrire all gems that we will use. MAKE SURE THAT THEY ARE INSTALLED!!
 require 'pry'
 require 'net/http'
 require 'json'
