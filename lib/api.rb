@@ -18,7 +18,7 @@ class API
       array_of_drinks.each do |drink_hash|
         #initialize a new drink
         drink_instance = Drink.new
-        #assign attributes to it, used the writer method
+        #assign attributes to it, used the writer
         drink_instance.id = drink_hash["idDrink"]
         drink_instance.name = drink_hash["strDrink"]
         drink_instance.instructions = drink_hash["strInstructions"]

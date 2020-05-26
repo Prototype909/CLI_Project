@@ -16,7 +16,7 @@ class Drink
     @@all << self
   end
 
-  def self.all 
+  def self.all # this methong
     @@all
   end
  

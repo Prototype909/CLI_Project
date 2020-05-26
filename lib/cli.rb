@@ -18,6 +18,8 @@ class CLI
       puts "Good Choice, let's get Tipsie! Please select a drink!"
       display_list_of_drinks
       ask_user_for_drink_choice
+      sleep(2)
+      menu
     else
       #end the program
       puts "Goodbye!"
@@ -39,16 +41,19 @@ class CLI
     max_limit = Drink.all.length - 1
     until index.between?(0,max_limit)
       puts "sorry, that is an invalid choice. Please choose again."
-      index = gets.strip.to_i - 1
+      index = gets.strip.to_i - 1\
+    end
     #found their drink choice
     drink_instance = Drink.all[index]
     #call the method that will print out their choice
-    display_drink_details
-    end
+    display_drink_details(drink_instance)
   end
 
-  def display_drink_details(drink_instance)
-    
-
+  def display_drink_details(drink)
+    puts "\n"
+    puts drink.name
+    puts "\nCategory:" + drink.category
+    puts "\nGlass:" + drink.glass 
+    puts "\nInstruction:" + drink.instructions
   end
 end
