@@ -10,14 +10,19 @@ class CLI
     self.menu
   end
 
+  def logo
+    puts "    _____\r\n   \/.---.\\\r\n   |`````|\r\n   \\     \/\r\n    `-.-'           ____\r\n      |    \/\\     .'   \/\\\r\n    __|__  |K----;    |  |\r\n   `-----` \\\/     '.___\\\/"
+  end
+
   def menu
+    logo
     puts "Would you like to see a list of drinks?"
     puts "Type 'yes' to continue or any other key to exit."
     user_input = gets.strip.downcase
     if user_input == "yes" || user_input == "y"
-      puts "Woo Hoo, let's get Tipsie! Please select a letter of the drink!"
+      puts "Woo Hoo, let's get Tipsy! Please select the first letter of your drink choice!"
       user_input = gets.strip.downcase
-      API.fetch_drinks(user_input)
+      API.fetch_drinks(user_input) # moved this here so i could input a serach character
       
       display_list_of_drinks
       ask_user_for_drink_choice
@@ -25,7 +30,7 @@ class CLI
       menu
     else
       #end the program
-      puts "Thanks for using the Tipsey Bartender!"
+      puts "Thanks for using the Tipsy Bartender!"
     end
   end
 
@@ -55,17 +60,17 @@ class CLI
   def display_drink_details(drink)
     puts "\n"
     puts drink.name
-    puts "\nCategory:" + drink.category
-    puts "\nGlass:" + drink.glass 
+    puts "\nCategory: " + drink.category
+    puts "\nGlass: " + drink.glass 
     drink.ingredients.length.times do |i|
       if drink.ingredients[i] != nil
         measureAmount = ""
         if drink.measures[i] != nil
           measureAmount = drink.measures[i]
         end
-        puts "\nIngredient " + i.to_s + " -> " + measureAmount + " " + drink.ingredients[i]
+        puts "\nIngredient #{i.to_s} -- #{measureAmount} #{drink.ingredients[i]}"
       end
     end
-    puts "\nInstruction:" + drink.instructions
+    puts "\nInstructions: " + drink.instructions
   end
 end

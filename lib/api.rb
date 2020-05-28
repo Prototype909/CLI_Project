@@ -28,7 +28,7 @@ class API
   end
   
   def self.fetch_drinks(searchValue)
-      url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + searchValue
+      url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=" + searchValue
       uri = URI(url)
       response = Net::HTTP.get(uri)
       hash = JSON.parse(response) #turns it into a ruby hash
