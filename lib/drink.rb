@@ -10,13 +10,13 @@ class Drink
 
   @@all = []
 
-  attr_accessor :id, :name, :instructions, :glass, :category
+  attr_accessor :id, :name, :instructions, :glass, :category, :ingredients, :measures
 
   def initialize 
     @@all << self
   end
 
-  def self.all # this methong
+  def self.all # this methond
     @@all
   end
  

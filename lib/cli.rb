@@ -6,7 +6,7 @@ class CLI
 
   def start
     puts "Welcome to the Tipsie Bartender!"
-    API.fetch_drinks
+    
     self.menu
   end
 
@@ -15,14 +15,17 @@ class CLI
     puts "Type 'yes' to continue or any other key to exit."
     user_input = gets.strip.downcase
     if user_input == "yes" || user_input == "y"
-      puts "Good Choice, let's get Tipsie! Please select a drink!"
+      puts "Woo Hoo, let's get Tipsie! Please select a letter of the drink!"
+      user_input = gets.strip.downcase
+      API.fetch_drinks(user_input)
+      
       display_list_of_drinks
       ask_user_for_drink_choice
       sleep(2)
       menu
     else
       #end the program
-      puts "Goodbye!"
+      puts "Thanks for using the Tipsey Bartender!"
     end
   end
 
@@ -54,6 +57,15 @@ class CLI
     puts drink.name
     puts "\nCategory:" + drink.category
     puts "\nGlass:" + drink.glass 
+    drink.ingredients.length.times do |i|
+      if drink.ingredients[i] != nil
+        measureAmount = ""
+        if drink.measures[i] != nil
+          measureAmount = drink.measures[i]
+        end
+        puts "\nIngredient " + i.to_s + " -> " + measureAmount + " " + drink.ingredients[i]
+      end
+    end
     puts "\nInstruction:" + drink.instructions
   end
 end
