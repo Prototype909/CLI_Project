@@ -10,12 +10,10 @@ class CLI
     self.menu
   end
 
-  def logo
-    puts "    _____\r\n   \/.---.\\\r\n   |`````|\r\n   \\     \/\r\n    `-.-'           ____\r\n      |    \/\\     .'   \/\\\r\n    __|__  |K----;    |  |\r\n   `-----` \\\/     '.___\\\/"
-  end
+  
 
   def menu
-    logo
+    Logo.logo
     puts "Would you like to see a list of drinks?"
     puts "Type 'yes' to continue or any other key to exit."
     user_input = gets.strip.downcase
