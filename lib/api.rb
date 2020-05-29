@@ -27,8 +27,8 @@ class API
     return measures
   end
   
-  def self.fetch_drinks(searchValue)
-      url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=" + searchValue
+  def self.fetch_drinks(search_value)
+      url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=" + search_value
       uri = URI(url)
       response = Net::HTTP.get(uri)
       hash = JSON.parse(response) #turns it into a ruby hash
@@ -45,6 +45,6 @@ class API
         drink_instance.category = drink_hash["strCategory"]
         drink_instance.ingredients = build_ingredients_array(drink_hash)
         drink_instance.measures = build_measure_array(drink_hash)
-      end
+        end
     end
 end

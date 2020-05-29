@@ -49,7 +49,7 @@ class CLI
     max_limit = Drink.all.length - 1
     until index.between?(0,max_limit)
       puts "sorry, that is an invalid choice. Please choose again."
-      index = gets.strip.to_i - 1\
+      index = gets.strip.to_i - 1
     end
     #found their drink choice
     drink_instance = Drink.all[index]

@@ -5,7 +5,7 @@
 require 'pry'
 require 'net/http'
 require 'json'
-
+require 'colorize'
 
 # require all files that we will use
 require_relative "./lib/api"

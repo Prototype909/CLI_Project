@@ -13,7 +13,7 @@ class Drink
   attr_accessor :id, :name, :instructions, :glass, :category, :ingredients, :measures
 
   def initialize 
-    @@all << self
+       @@all << self
   end
 
   def self.all # this methond
