@@ -1,9 +1,7 @@
 testing testing 123
 # CLIProject
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/CLI_Project`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to the Tipsy Bartender! This application will provide you a list of over 500 drinks and over 400 ingredients to make your favorite cocktails! These drinks are sorted by letter to narrow down your choice, and will provide you with the specific glass type, ingredients, measurements and detailed instructions to make your favorite cocktail! Enjoy!
 
 ## Installation
 
@@ -23,7 +21,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+You use the application by initializing the program from ruby bin/start. Once launched you will be required to input the first letter of the drink you would like to make, ex. type M to see a list of all drinks that start with the letter M. once selected, find the drink you would like, enter the corrisponding number. The application Will then provide you with information regarding the ingredients, measurements, and instructions.
 
 ## Development
 
