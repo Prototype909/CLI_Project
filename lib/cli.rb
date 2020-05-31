@@ -12,7 +12,7 @@ class CLI
 
   
 
-  def menu
+  def menu #instance method - and objects ability to have logic
     Logo.logo
     puts "Would you like to see a list of drinks?"
     puts "Type 'yes' to continue or any other key to exit."

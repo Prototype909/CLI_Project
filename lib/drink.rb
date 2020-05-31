@@ -12,7 +12,7 @@ class Drink
 
   attr_accessor :id, :name, :instructions, :glass, :category, :ingredients, :measures
 
-  def initialize 
+  def initialize # lifecycle event because it automatical envoked when you call .new on the class
        @@all << self
   end
 

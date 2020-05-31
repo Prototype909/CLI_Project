@@ -36,7 +36,7 @@ class API
       
       array_of_drinks.each do |drink_hash|
         #initialize a new drink
-        drink_instance = Drink.new
+        drink_instance = Drink.new # instantiation = bringing an object to life
         #assign attributes to it, used the writer
         drink_instance.id = drink_hash["idDrink"]
         drink_instance.name = drink_hash["strDrink"]
